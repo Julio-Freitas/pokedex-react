@@ -1,5 +1,6 @@
 import * as S from './styles';
+import { IBagde, PokemonTypes } from './ types';
 
-export const Badge = ({ color }: { color: string }) => (
-  <S.Span color={color}>{color}</S.Span>
+export const Badge = ({ color }: IBagde) => (
+  <S.Span color={PokemonTypes[color as string]}>{PokemonTypes[color]}</S.Span>
 );

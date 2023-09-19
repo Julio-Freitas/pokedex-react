@@ -1,5 +1,4 @@
-import usePokemons from '../../hooks/usePokemons';
-
+import { usePokemons } from '../../hooks/usePokemons';
 import {
   ControlList,
   InfoPokemons,
@@ -12,6 +11,7 @@ import * as S from './styled';
 export const Home = () => {
   const pokemons = usePokemons();
 
+  console.log(pokemons);
   return (
     <S.Container>
       {pokemons.error && <h1>Algo de errado aconteceu..</h1>}
@@ -29,8 +29,8 @@ export const Home = () => {
             name={pokemon.name}
             sprite={pokemon.sprites?.front_default ?? ''}
             preview={
-              pokemon.sprites?.versions['generation-v']['black-white']?.animated
-                .front_default || ''
+              pokemon.sprites.versions['generation-v']['black-white'].animated
+                .front_default
             }
           />
         ))}

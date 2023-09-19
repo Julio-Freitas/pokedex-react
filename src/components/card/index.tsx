@@ -1,4 +1,4 @@
-import { ICard } from './type';
+import { ICard } from './ types';
 import * as S from './styles';
 export const Card = ({ name, sprite }: ICard) => {
   return (

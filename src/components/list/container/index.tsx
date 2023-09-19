@@ -1,4 +1,4 @@
-import { ListProps } from './type';
+import { ListProps } from './ types';
 import * as S from './styles';
 
 export const Container = ({ children }: ListProps) => {

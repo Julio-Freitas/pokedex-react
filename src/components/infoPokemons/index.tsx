@@ -1,5 +1,5 @@
 import pokeball from '../../assets/pokeball.svg';
-import { InfoPokemonProps } from './type';
+import { InfoPokemonProps } from './ types';
 import * as S from './styles';
 
 export const InfoPokemons = ({ count }: InfoPokemonProps) => (

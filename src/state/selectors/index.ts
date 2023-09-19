@@ -7,6 +7,7 @@ import { AxiosError } from 'axios';
 import { getSpritePokemon } from '../../utils/getSpritePokemon';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
+
 export const getPokemonsAPI = selector<IPokemonFetch>({
   key: 'getListaDePokemons',
   get: async ({ get }) => {
@@ -76,7 +77,7 @@ export const getPokemonByNameAPI = selector({
         const { name, sprites, types, id } = data;
         return {
           name,
-          sprites: getSpritePokemon(id, sprites),
+          sprites: await getSpritePokemon(id, sprites),
           types,
           error: false,
         } as unknown as IPokemon;
@@ -85,18 +86,18 @@ export const getPokemonByNameAPI = selector({
 
         if (error?.request?.status === 404) {
           return {
-            name: null,
-            sprites: null,
-            types: null,
+            name: '',
+            sprites: 'null',
+            types: 'null',
             error: true,
-          };
+          } as unknown as IPokemon;
         }
         return {
-          name: null,
-          sprites: null,
-          types: null,
+          name: 'null',
+          sprites: 'null',
+          types: 'null',
           error: true,
-        };
+        } as unknown as IPokemon;
       }
     }
   },
