@@ -2,7 +2,7 @@ import { FC } from 'react';
 import * as S from './style';
 // icons
 import pokeball from '../../assets/pokeball.svg';
-import { ILoading } from './type';
+import { ILoading } from './types';
 
 export const Loading: FC<ILoading> = ({ isLoading, loadingText }) => {
   if (!isLoading) return null;

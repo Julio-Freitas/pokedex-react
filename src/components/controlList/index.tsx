@@ -7,20 +7,10 @@ export const ControlList = () => {
 
   return (
     <S.WrapperControls>
-      <Button
-        onClick={() => {
-          setOffset((prev) => prev && prev - 10);
-        }}
-      >
+      <Button onClick={() => setOffset((prev) => prev && prev - 10)}>
         Voltar
       </Button>
-      <Button
-        onClick={() => {
-          setOffset((prev) => prev + 10);
-        }}
-      >
-        Avançar
-      </Button>
+      <Button onClick={() => setOffset((prev) => prev + 10)}>Avançar</Button>
     </S.WrapperControls>
   );
 };

@@ -31,9 +31,9 @@ export interface IPokemonsSprites {
 export interface IPokemon {
   name: string;
   url?: string;
-  sprites?: IPokemonsSprites;
+  sprites: IPokemonsSprites;
   types: IPokemonType[];
-  error?: boolean;
+  error: boolean;
 }
 
 export interface IPokemonFetch {

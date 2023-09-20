@@ -3,7 +3,7 @@ import { listPokemons, loadMorePokemons } from '../../state/atom';
 import { getPokemonsAPI } from '../../state/selectors';
 import { useCallback, useEffect, useState } from 'react';
 
-export default function usePokemons() {
+export function usePokemons() {
   const [error, setError] = useState('');
   const [count, setCount] = useState(0);
 
@@ -23,11 +23,11 @@ export default function usePokemons() {
       setError(error?.message as string);
       setData([]);
     }
-  }, [offsetValue]);
+  }, [resultAPi.count, resultAPi.error, resultAPi.results, setData]);
 
   useEffect(() => {
     getAllPokemons();
-  }, [offsetValue]);
+  }, [getAllPokemons, offsetValue]);
 
   return {
     data,

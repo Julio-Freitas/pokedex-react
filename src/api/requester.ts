@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import axios, {
   InternalAxiosRequestConfig,
   AxiosResponse,
@@ -8,7 +9,7 @@ export const requester = (
   config: AxiosRequestConfig,
   contentType?: string,
   options?: any,
-): any => {
+) => {
   const service = axios.create({
     baseURL: config.baseURL,
     ...options,
@@ -16,8 +17,8 @@ export const requester = (
 
   const onRequest = (config: InternalAxiosRequestConfig<any>) => {
     const newConfig = config;
-    newConfig['headers']['Content-Type'] = contentType || 'application/json';
-    newConfig['headers']['Access-Control-Allow-Origin'] = '*';
+    newConfig.headers['Content-Type'] = contentType ?? 'application/json';
+    newConfig.headers['Access-Control-Allow-Origin'] = '*';
     return newConfig;
   };
 

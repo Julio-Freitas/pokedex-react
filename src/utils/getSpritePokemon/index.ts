@@ -13,6 +13,7 @@ export const getSpritePokemon = async (id: number, sprites: ISpriteVerions) => {
       ...sprites,
       front_default: requetImage.url,
     };
+
   return {
     ...sprites,
     front_default: pokemonImg,

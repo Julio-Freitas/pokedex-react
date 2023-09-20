@@ -1,0 +1,9 @@
+.eslintrc.js
+ios/
+android/
+*.config.js
+styled.d.ts
+vite.config.ts
+jest.setup.js
+jest.config.cjs
+__mocks__/
